@@ -6,7 +6,7 @@ int main(){
     int rainha = 1;
     int resposta;
 
-    printf("***** Menu iterativo *****\n");
+    printf("***** Menu interativo *****\n");
     printf("Escolha qual peça movimentar\n");
     printf("1. Torre\n");
     printf("2. Bispo\n");
@@ -15,33 +15,44 @@ int main(){
     scanf("%d", &resposta);
 
     switch (resposta){
+
         case 1:
-        for (torre; torre <= 5; torre++)
-        {
-            printf("Direita\n");
+
+        void moverTorre(int casas){
+            if (casas > 0){
+                printf("Direita\n");
+                moverTorre(casas - 1);
+            }
         }
+
+        moverTorre(5);
         break;
 
         case 2:
-        while (bispo <= 5)
-        {
 
-        printf("Cima, Direita\n");
-        bispo++;
-
+        void moverBispo (int casas){
+            if (casas > 0){
+                printf("Cima, direita\n");
+                moverBispo(casas - 1);
+            }
         }
+       
+        moverBispo(5);
         break;
 
         case 3:
-        do {
 
-            printf("Esquerda\n");
-            rainha++;
-            
-        } while (rainha <= 8);
+        void moverRainha(int casas){
+            if (casas > 0){
+                printf("Esquerda\n");
+                moverRainha(casas - 1);
+            }
+        }
+        
+        moverRainha(8);
+        break;
 
         case 4:
-
         int movimentoCavalo;
 
         for (movimentoCavalo = 1; movimentoCavalo <= 1; movimentoCavalo++ ){
